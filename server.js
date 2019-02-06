@@ -11,6 +11,8 @@ var config = require("./config.js");
 var events = require("events");
 var mysql = require("mysql");
 
+//
+
 var createSql = require("./lib/sqlTables/createTables.js");
 var handleSql = require("./lib/sqlTables/handleSql.js");
 
@@ -30,13 +32,11 @@ var server_port = 5000;
 //|| 5000
 var server_ip_address = "0.0.0.0";
 ///
-
-global.eventEmit = new events.EventEmitter();
+var storeOtp = new Array(); //Test Otp storage
 
 var pool = mysql.createPool(config.mysql);
 createSql.createTables(pool);
-
-var storeOtp = new Array(); //Test Otp storage
+global.eventEmit = new events.EventEmitter();
 
 app.get("/", function(req, res, next) {
   res.render("index");
