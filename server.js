@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(myLogger);
 
-var server_port = 8080;
+var server_port = 5000;
 //|| 5000
 var server_ip_address = "0.0.0.0";
 ///
