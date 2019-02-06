@@ -59,7 +59,62 @@
     <br />
     <div id="object2"><br /><strong>Respose</strong><br /></div>
 
+    <br /><br />
+
+    <span
+      ><h3>
+        Submit Data(All data is automatically sent in the app after attempting
+        all the questions)
+      </h3></span
+    >
+    <form
+      id="submitData"
+      enctype="text/plain"
+      action="/submitData"
+      method="post"
+    >
+      <input
+        type="text"
+        id="User_Name"
+        name="User_Name"
+        placeholder="Type User Name"
+        required
+      /><br />
+      <input
+        type="number"
+        id="User_Number"
+        name="User_Number"
+        placeholder="Type User Number"
+        required
+      /><br />
+      <input
+        type="text"
+        id="Question_1"
+        name="Question_1"
+        placeholder="ans of Q1 (Checkbox)"
+        required
+      /><br />
+      <input
+        type="text"
+        id="Question_2"
+        name="Question_2"
+        placeholder="ans of Q2 (Checkbox)"
+        required
+      /><br />
+      <input
+        type="text"
+        id="Question_3"
+        name="Question_3"
+        placeholder="ans of Q3 (Checkbox)"
+        required
+      /><br />
+      <input type="submit" value="submit Questions" name="submit" />
+    </form>
+    <br />
+    <div id="object1"><br /><strong>Respose</strong><br /></div>
+    <br /><br /><br />
     <script>
+      ////////////////////////////////////Gen OTP
       $("#generateOtp").submit(function() {
         $("#object3")
           .empty()
@@ -70,14 +125,16 @@
             status("Error: " + xhr.status);
           },
           success: function(response) {
-            console.log(response);
+            var objString = JSON.stringify(response);
             $("#object3")
               .empty()
-              .text(response);
+              .text(objString);
           }
         });
         return false;
       });
+
+      ////////////////////////////////////Confirm OTP
 
       $("#confirmOtp").submit(function() {
         $("#object2")
@@ -91,6 +148,27 @@
             var objString = JSON.stringify(response);
 
             $("#object2")
+              .empty()
+              .text(objString);
+          }
+        });
+        return false;
+      });
+
+      ////////////////////////////////////submit Data
+
+      $("#submitData").submit(function() {
+        $("#object1")
+          .empty()
+          .text("Submitting Data....");
+        $(this).ajaxSubmit({
+          error: function(xhr) {
+            status("Error: " + xhr.status);
+          },
+          success: function(response) {
+            var objString = JSON.stringify(response);
+
+            $("#object1")
               .empty()
               .text(objString);
           }
