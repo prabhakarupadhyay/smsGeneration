@@ -1,0 +1,30 @@
+{
+  "name": "mytest",
+  "version": "1.0.0",
+  "description": "Test",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prabhakarupadhyay/smsGeneration.git"
+  },
+  "author": "Test",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prabhakarupadhyay/smsGeneration/issues"
+  },
+  "homepage": "https://github.com/prabhakarupadhyay/smsGeneration#readme",
+  "dependencies": {
+    "body-parser": "*",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "generate-password": "^1.4.1",
+    "mime-types": "*",
+    "mysql": "^2.16.0",
+    "path": "*",
+    "urlencode": "*"
+  }
+}
