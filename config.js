@@ -7,8 +7,8 @@ var id = {
   },
   credentials: {
     msg: "Your generated OTP is: ",
-    username: "prabhakarupadhyay1997@gmail.com",
-    hash: "d188b296f99384a91ef40f7b3e22206ab03440693e55e6deb00f4f90438a843d",
+    username: "prabhakarupadhyay96@gmail.com",
+    hash: "7f083765b635ae3ff385c85083291229e96156d3c47fbd072f4a26d7cdb7fc10",
     sender: "txtlcl",
     host: "api.textlocal.in"
   }
